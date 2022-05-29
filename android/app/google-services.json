@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893460093227",
+    "project_id": "ohmyshirt-6cb4a",
+    "storage_bucket": "ohmyshirt-6cb4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893460093227:android:41e9b7fe1dcae7568a0d6e",
+        "android_client_info": {
+          "package_name": "com.example.oh_my_shirt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893460093227-qq363ct6b6mmscduq8nm8kqmrse70siq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZRlXoUlq6wO3o8A7QwHs5FOnfnGY--3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893460093227-qq363ct6b6mmscduq8nm8kqmrse70siq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
