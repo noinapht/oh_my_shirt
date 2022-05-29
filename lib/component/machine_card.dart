@@ -42,7 +42,7 @@ class _MachineCardState extends State<MachineCard> {
         if (widget.machine["status"] == "available") {
           WshowDialog.showMyDialog(
               context: context,
-              title: "ชำระด้วย OhMyShirt credith?",
+              title: "ชำระด้วย OH COIN?",
               body: "ระบบจะตัดเงินจากเครดิตของคุณ ",
               actionLeft: 'ยืนยัน',
               confirm: () {
@@ -184,7 +184,7 @@ class _MachineCardState extends State<MachineCard> {
                           borderRadius: BorderRadius.circular(8),
                           color: widget.machine["status"] != "available"
                               ? Colors.white
-                              : AppTheme.uiGray_3,
+                              : Colors.green[100],
                         ),
                         padding:
                             EdgeInsets.symmetric(horizontal: 16, vertical: 8),

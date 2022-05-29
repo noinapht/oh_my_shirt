@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oh_my_shirt/data/app_theme.dart';
 import 'package:oh_my_shirt/service/authentication.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,7 +25,9 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          
            decoration: BoxDecoration(
+            //  color:Colors.amber,
               image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage("assets/images/bg.png"))),

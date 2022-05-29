@@ -139,28 +139,18 @@ class _HomeState extends State<Home> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(
-                    //       horizontal: 16, vertical: 5),
-                    //   child: Text("บริการซักล้างทุกระดับประทับใจ",
-                    //       style: AppTheme.subGtxt),
-                    // ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
                       child: AdvApp(),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 3,
                     ),
                     mycoin(),
                     Container(
                       margin: EdgeInsets.only(top: 16),
                       padding: const EdgeInsets.all(16),
                       child: Column(
-                        // crossAxisAlignment:CrossAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(

@@ -34,7 +34,6 @@ class _LogInState extends State<LogIn> {
                     margin: EdgeInsets.only(bottom: 10),
                     child: Image.asset("assets/images/gogo.jpg"),
                   ),
-                  
                   SizedBox(
                     height: 100,
                   ),

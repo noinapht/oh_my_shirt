@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:oh_my_shirt/component/snack_bar.dart';
 import 'package:oh_my_shirt/data/app_theme.dart';
@@ -137,7 +135,6 @@ class _TopUpState extends State<TopUp> {
               child: ElevatedButton(
                   onPressed: () async {
                     if (money != null) {
-                      log("message");
                       context.read<UserInfoPvd>().topUp(money);
                       Navigator.pop(context);
                     } else {
