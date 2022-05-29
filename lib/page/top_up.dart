@@ -46,6 +46,64 @@ class _TopUpState extends State<TopUp> {
     }).toList();
   }
 
+  Widget coinCard() {
+    return Container(
+        margin: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.all(16),
+        height: 200,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              opacity: 0.3,
+              fit: BoxFit.cover,
+              image: AssetImage("assets/images/washing.jpg")),
+          color: AppTheme.brandPrimary.withOpacity(0.9),
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: AppTheme.shadowCard,
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    "assets/images/money.png",
+                    fit: BoxFit.cover,
+                    width: 50,
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "OH COIN",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(context.watch<UserInfoPvd>().userOms?.displayName ??
+                          ""),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Text(
+                "฿${context.watch<UserInfoPvd>().userOms?.coin ?? 0}",
+                style: AppTheme.title,
+              ),
+            ),
+          ],
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,60 +122,7 @@ class _TopUpState extends State<TopUp> {
             ),
             Text("เติมเหรียญสำหรับใช้บริการซักภายในแอป",
                 style: AppTheme.subGtxt),
-            Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.all(16),
-                height: 200,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      opacity: 0.3,
-                      fit: BoxFit.cover,
-                      image: AssetImage("assets/images/washing.jpg")),
-                  color: AppTheme.brandPrimary.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(8),
-                  boxShadow: AppTheme.shadowCard,
-                ),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            "assets/images/money.png",
-                            fit: BoxFit.cover,
-                            width: 50,
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("OH COIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(context
-                                      .watch<UserInfoPvd>()
-                                      .userOms
-                                      ?.displayName ??
-                                  ""),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: Text(
-                        "฿${context.watch<UserInfoPvd>().userOms?.coin ?? 0}",
-                        style: AppTheme.title,
-                      ),
-                    ),
-                  ],
-                )),
+            coinCard(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: Text("เลือกจำนวนเงินที่ต้องการเติม",

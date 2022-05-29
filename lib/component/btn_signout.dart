@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:oh_my_shirt/page/login.dart';
+import 'package:oh_my_shirt/component/wc_showdialog.dart';
 import 'package:oh_my_shirt/service/authentication.dart';
 
 class SignOutButton extends StatefulWidget {
@@ -11,7 +10,6 @@ class SignOutButton extends StatefulWidget {
 }
 
 class _SignOutButtonState extends State<SignOutButton> {
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -21,16 +19,23 @@ class _SignOutButtonState extends State<SignOutButton> {
         ),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(8),
           ),
         ),
       ),
       onPressed: () async {
-       
-        await Authentication.signOut(context: context);
-       
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => LogIn()), (route) => false);
+        return WshowDialog.showMyDialog(
+            context: context,
+            title: "ออกจากระบบ",
+            body: "คุณแน่ใจว่าคุณต้องการออกจากระบบ",
+            actionLeft: 'ออกจากระบบ',
+            actionRight: 'ยกเลิก',
+            confirm: () async {
+              await Authentication.signOut(context: context);
+              Navigator.pop(context);
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/login', (route) => false);
+            });
       },
       child: Padding(
         padding: EdgeInsets.only(top: 8.0, bottom: 8.0),

@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:oh_my_shirt/data/app_theme.dart';
 import 'package:oh_my_shirt/page/home.dart';
+import 'package:oh_my_shirt/page/login.dart';
 import 'package:oh_my_shirt/page/splash.dart';
 import 'package:oh_my_shirt/page/top_up.dart';
 import 'package:oh_my_shirt/provider/userinfo_pvd.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
             initialRoute: '/',
             routes: {
               '/': (ctx) => SplashScreen(),
+              '/login': (ctx) => LogIn(),
               '/home': (ctx) => Home(),
               '/topup': (ctx) => TopUp(),
             },

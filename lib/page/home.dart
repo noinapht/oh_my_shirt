@@ -58,7 +58,8 @@ class _HomeState extends State<Home> {
                   children: [
                     Text(
                       "OH COIN",
-                      style: TextStyle(color: Colors.black),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                     SizedBox(
                       height: 5,
@@ -116,7 +117,8 @@ class _HomeState extends State<Home> {
             itemBuilder: (context) => [
               PopupMenuItem(
                 value: 1,
-                child: AppComponent().themeModeBtn,
+                child: Container(
+                    width: double.infinity, child: AppComponent.themeModeBtn),
               ),
               PopupMenuItem(value: 2, child: SignOutButton()),
             ],
@@ -140,7 +142,8 @@ class _HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 5),
                       child: AdvApp(),
                     ),
                     SizedBox(

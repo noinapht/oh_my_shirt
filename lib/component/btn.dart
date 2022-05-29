@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:oh_my_shirt/main.dart';
 
 class AppComponent {
-  Widget themeModeBtn = ElevatedButton(
-      onPressed: () {
-        themeMode.value = themeMode.value == 1 ? 2 : 1;
-      },
-      child: Text("theme"));
+ static Widget themeModeBtn = GestureDetector(
+    onTap: () {
+      themeMode.value = themeMode.value == 1 ? 2 : 1;
+    },
+    child:  
+         Container(
+          //  width: double.infinity,
+           color: Colors.transparent,
+           child: Icon(Icons.wb_incandescent)),
+  );
 
   static Widget largebtnNavigate(
       {BuildContext context,
@@ -50,7 +55,7 @@ class AppComponent {
                 offset: Offset(0, 10),
               ),
             ]),
-        // color: Colors.amber,
+      // color: Colors.amber,
         child: Container(
           // color: a,
           child: Center(

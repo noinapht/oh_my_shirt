@@ -113,7 +113,7 @@ class _MachineCardState extends State<MachineCard> {
             child: Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 12),
+                  margin: EdgeInsets.only(right: 18),
                   width: 50,
                   child: CachedNetworkImage(
                       imageUrl: widget.machine["img"],
@@ -142,15 +142,14 @@ class _MachineCardState extends State<MachineCard> {
                     children: [
                       Text(
                         "Washer" + widget.machine["id"],
-                        style: TextStyle(fontSize: 24, color: Colors.black),
+                        style: TextStyle(fontSize: 20, color: Colors.black),
                       ),
-                      SizedBox(
-                        height: 8,
+                    
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: Text(widget.machine["model"], style: AppTheme.subGtxt),
                       ),
-                      Text(widget.machine["model"], style: AppTheme.subGtxt),
-                      SizedBox(
-                        height: 8,
-                      ),
+                     
                       Row(
                         children: [
                           CircleAvatar(

@@ -1,6 +1,6 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:oh_my_shirt/data/app_theme.dart';
 
 class AdvApp extends StatefulWidget {
   const AdvApp({Key key}) : super(key: key);
@@ -42,7 +42,6 @@ class _AdvAppState extends State<AdvApp> {
                             end: Alignment.topCenter,
                           ),
                         ),
-                       
                       ),
                     ),
                   ],
@@ -52,19 +51,23 @@ class _AdvAppState extends State<AdvApp> {
         .toList();
     return Column(children: [
       ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        child: CarouselSlider(
-          items: imageSliders,
-          carouselController: _controller,
-          options: CarouselOptions(
-              autoPlay: true,
-              viewportFraction: 1,
-              aspectRatio: 2,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _current = index;
-                });
-              }),
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        
+        child: Container(
+          color: AppTheme.uiGray_4,
+          child: CarouselSlider(
+            items: imageSliders,
+            carouselController: _controller,
+            options: CarouselOptions(
+                autoPlay: true,
+                viewportFraction: 1,
+                aspectRatio: 2,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _current = index;
+                  });
+                }),
+          ),
         ),
       ),
       Row(

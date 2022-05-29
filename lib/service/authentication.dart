@@ -25,15 +25,9 @@ class Authentication {
     User user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       context.read<UserInfoPvd>().getUserInfo(user.uid);
-            Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
-
-   
+      Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
     } else {
-      Navigator.of(context).push( //noina
-        MaterialPageRoute(
-          builder: (context) => LogIn(),
-        ),
-      );
+      Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
     }
 
     log(user.toString());
@@ -74,14 +68,12 @@ class Authentication {
               'coin': 300
             };
             var documentReference =
-              FirebaseFirestore.instance.collection('users').doc(user.uid);
+                FirebaseFirestore.instance.collection('users').doc(user.uid);
             documentReference
                 .set(data)
                 .then((value) => log("User Added"))
                 .catchError((error) => print("Failed to add user: $error"));
           }
-
-
         } catch (e) {
           print('something wrong');
         }
